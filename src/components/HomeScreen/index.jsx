@@ -35,126 +35,24 @@ function HomeScreen() {
 
 
       <div className="container banners">
+     
         <div className="row">
-          <div className="col-lg-6">
-            <Reveal
-              keyframes={fadeInLeftShorter}
-              delay={150}
-              duration={1000}
-              triggerOnce
-            >
-              <div className="banner banner-hover lazy-media height-1 banner-overlay">
-                <figure className="mb-0">
-                  <div className="lazy-overlay"></div>
-                  <LazyLoadImage
-                    alt="banner"
-                    src="images/unexStore.jpeg"
-                    threshold={200}
-                    width="100%"
-                    height="auto"
-                    effect="blur"
-                  />
-                </figure>
-
-                <div className="banner-content">
-                  <h3 className="banner-title text-white">
-                    <ALink
-                      href={{
-                        pathname: "/shop/sidebar/list",
-                        query: { category: "sweatshirts-and-hoodies" },
-                      }}
-                    >
-                      Sweatshirts & Hoodies
-                    </ALink>
-                  </h3>
-                  <ALink href="/shop/sidebar/list" className="banner-link">
-                    Shop Now <i className="icon-long-arrow-right"></i>
-                  </ALink>
-                </div>
-              </div>
-            </Reveal>
-          </div>
-
-          <div className="col-sm-6 col-lg-3">
-            <Reveal keyframes={fadeIn} delay={150} duration={1000} triggerOnce>
-              <div className="banner banner-hover lazy-media height-1 banner-overlay">
-                <figure className="mb-0">
-                  <div className="lazy-overlay"></div>
-
-                  <LazyLoadImage
-                    alt="banner"
-                    src="images/home/banners/banner-2.jpg"
-                    threshold={200}
-                    height="auto"
-                    width="100%"
-                    effect="blur"
-                  />
-                </figure>
-
-                <div className="banner-content">
-                  <h3 className="banner-title text-white">
-                    <ALink
-                      href={{
-                        pathname: "/shop/sidebar/list",
-                        query: { category: "men-jacket" },
-                      }}
-                    >
-                      Men’s Jacket
-                    </ALink>
-                  </h3>
-                  <ALink href="/shop/sidebar/list" className="banner-link">
-                    Shop Now <i className="icon-long-arrow-right"></i>
-                  </ALink>
-                </div>
-              </div>
-            </Reveal>
-          </div>
-
-          <div className="col-sm-6 col-lg-3">
+          <div className="col-sm-12 col-lg-3">
             <Reveal
               keyframes={fadeInRightShorter}
               delay={150}
               duration={1000}
               triggerOnce
             >
-              <div className="banner banner-hover lazy-media height-1-2 banner-overlay">
+
+
+              <div className="banner banner-hover lazy-media height-1 banner-overlay">
                 <figure className="mb-0">
                   <div className="lazy-overlay"></div>
 
                   <LazyLoadImage
                     alt="banner"
-                    src="images/home/banners/banner-3.jpg"
-                    threshold={200}
-                    height="auto"
-                    width="100%"
-                    effect="blur"
-                  />
-                </figure>
-
-                <div className="banner-content">
-                  <h3 className="banner-title text-white">
-                    <ALink
-                      href={{
-                        pathname: "/shop/sidebar/list",
-                        query: { category: "women-jacket" },
-                      }}
-                    >
-                      Women’s jackets
-                    </ALink>
-                  </h3>
-                  <ALink href="/shop/sidebar/list" className="banner-link">
-                    Shop Now <i className="icon-long-arrow-right"></i>
-                  </ALink>
-                </div>
-              </div>
-
-              <div className="banner banner-hover lazy-media height-1-2 banner-overlay">
-                <figure className="mb-0">
-                  <div className="lazy-overlay"></div>
-
-                  <LazyLoadImage
-                    alt="banner"
-                    src="images/home/banners/banner-4.jpg"
+                    src="images/tops.jpeg"
                     threshold={200}
                     width="100%"
                     height="auto"
@@ -170,7 +68,7 @@ function HomeScreen() {
                         query: { category: "accessories" },
                       }}
                     >
-                      Accessories
+                      Tops
                     </ALink>
                   </h3>
                   <ALink href="/shop/sidebar/list" className="banner-link">
@@ -180,6 +78,88 @@ function HomeScreen() {
               </div>
             </Reveal>
           </div>
+          <div className="col-lg-6">
+            <Reveal
+              keyframes={fadeInLeftShorter}
+              delay={150}
+              duration={1000}
+              triggerOnce
+            >
+              <div className="banner banner-hover lazy-media height-1 banner-overlay">
+                <figure className="mb-0">
+                  <div className="lazy-overlay"></div>
+                  <LazyLoadImage
+                    alt="banner"
+                    src="images/Banner1.jpeg"
+                    threshold={200}
+                    width="100%"
+                    height="auto"
+                    effect="blur"
+                  />
+                </figure>
+
+                <div className="banner-content">
+                  <h3 className="banner-title text-white">
+                    <ALink
+                      href={{
+                        pathname: "/shop/sidebar/list",
+                        query: { category: "sweatshirts-and-hoodies" },
+                      }}
+                    >
+                      All Men
+                    </ALink>
+                  </h3>
+                  <ALink href="/shop/sidebar/list" className="banner-link">
+                    Shop Now <i className="icon-long-arrow-right"></i>
+                  </ALink>
+                </div>
+              </div>
+            </Reveal>
+          </div>
+          <div className="col-sm-12 col-lg-3">
+            <Reveal
+              keyframes={fadeInRightShorter}
+              delay={150}
+              duration={1000}
+              triggerOnce
+            >
+
+
+              <div className="banner banner-hover lazy-media height-1 banner-overlay">
+                <figure className="mb-0">
+                  <div className="lazy-overlay"></div>
+
+                  <LazyLoadImage
+                    alt="banner"
+                    src="images/pants.jpeg"
+                    threshold={200}
+                    width="100%"
+                    height="auto"
+                    effect="blur"
+                  />
+                </figure>
+
+                <div className="banner-content">
+                  <h3 className="banner-title text-white">
+                    <ALink
+                      href={{
+                        pathname: "/shop/sidebar/list",
+                        query: { category: "accessories" },
+                      }}
+                    >
+                      Bottoms
+                    </ALink>
+                  </h3>
+                  <ALink href="/shop/sidebar/list" className="banner-link">
+                    Shop Now <i className="icon-long-arrow-right"></i>
+                  </ALink>
+                </div>
+              </div>
+            </Reveal>
+          </div>
+          
+
+      
         </div>
       </div>
 

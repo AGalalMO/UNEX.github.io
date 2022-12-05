@@ -4,7 +4,7 @@ function ImageBanner () {
 
     const Images = [
         {
-            url: 'images/home/slider/slide-1.jpg',
+            url: 'images/Banner1.jpeg',
             headText: 'UNEX',
             subHeadText: 'For Men Clothing',
             category: 'SEASONAL PICKS',

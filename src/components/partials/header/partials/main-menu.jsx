@@ -12,14 +12,15 @@ function MainMenu () {
     const { i18n } = useTranslation('home')
     const [categories,setCategories]=useState([])
     useEffect(() => {
-        getCategories()
+        if (categories.length == 0)
+            getCategories()
     }, [i18n])
 
     const getCategories = async () => {
         let response = await axiosInstance.get(APIS.CATEGORIES.LIST, {
             headers: {
                 'common': {
-                    'accept-language': i18n.language
+                    'accept-language': router.language ?? router.locale
                 }
             }
         })
