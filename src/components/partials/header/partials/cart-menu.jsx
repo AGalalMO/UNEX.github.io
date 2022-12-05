@@ -4,6 +4,7 @@ import ALink from "~/src/components/features/alink";
 
 import { actions } from "~/store/cart";
 import { cartQtyTotal, cartPriceTotal } from "~/src/utils/shared/index";
+import { useTranslation } from "react-i18next";
 
 function CartMenu(props) {
   const { cartlist } = props;

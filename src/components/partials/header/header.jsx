@@ -7,8 +7,11 @@ import WishlistMenu from '~/src/components/partials/header/partials/wishlist-men
 import CartMenu from '~/src/components/partials/header/partials/cart-menu';
 import MainMenu from '~/src/components/partials/header/partials/main-menu';
 import StickyHeader from '~/src/components/features/sticky-header';
-import Person2OutlinedIcon from '@mui/icons-material/Person2Outlined';
-function Header ( props ) {
+import { Typography } from '@mui/material';
+import { appWithTranslation, useTranslation } from "next-i18next";
+import { route } from 'next/dist/next-server/server/router';
+
+function Header (props) {
     const router = useRouter();
     const [ containerClass, setContainerClass ] = useState( 'container' );
 
@@ -47,6 +50,10 @@ function Header ( props ) {
                             <WishlistMenu />
 
                             <CartMenu />
+                            <Typography sx={{marginLeft:'2.3rem',color:'white',fontSize:'14px',cursor:'pointer'}} onClick={() => {
+                               
+                            }}>{router.locale=='en'?'العربية':"EN"}</Typography>
+                            
                         </div>
                     </div>
                 </div>
@@ -54,5 +61,5 @@ function Header ( props ) {
         </header>
     )
 }
+export default  Header
 
-export default Header;
