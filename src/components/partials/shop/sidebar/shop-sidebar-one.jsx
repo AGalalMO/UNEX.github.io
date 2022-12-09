@@ -6,7 +6,6 @@ import 'react-input-range/lib/css/index.css';
 
 import ALink from '~/src/components/features/alink';
 import { shopData } from '~/src/utils/shared/data';
-
 function ShopSidebarOne (props) {
     const { toggle = false, categories } = props;
     const router = useRouter();
@@ -119,7 +118,7 @@ function ShopSidebarOne (props) {
                         }
                     </SlideToggle>
 
-         
+
 
                     <SlideToggle collapsed={false}>
                         {({ onToggle, setCollapsibleElement, toggleState }) => (
