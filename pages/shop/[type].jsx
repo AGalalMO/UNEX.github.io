@@ -10,7 +10,6 @@ import SideBar from '~/src/components/partials/shop/list/components/SiderBar';
 import { ToolBox } from '~/src/components/partials/shop/list/components/ToolBox';
 
 function ShopGrid ({ products, categories }) {
-    console.log("proddd",products)
     const router = useRouter();
     const type = router.query.type;
     const query = router.query;
