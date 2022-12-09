@@ -52,7 +52,7 @@ export const canAddToCart = ( cartItems, product, qty ) => {
  * @param {Object} product 
  */
 export const isInWishlist = ( wishlist, product ) => {
-    return product && wishlist.findIndex( item => item.slug == product.slug ) > -1;
+    return false
 }
 
 /**

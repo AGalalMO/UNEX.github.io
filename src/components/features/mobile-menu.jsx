@@ -24,7 +24,7 @@ function MobileMenu () {
     function onSubmitSearchForm (e) {
         e.preventDefault();
         router.push({
-            pathname: '/shop/list',
+            pathname: '/shop/3cols',
             query: {
                 searchTerm: searchTerm,
                 category: ""
@@ -63,7 +63,7 @@ function MobileMenu () {
                         </SlideToggle>
                         <SlideToggle collapsed={true}>
                             <li >
-                                <ALink href="/shop/list">
+                                <ALink href="/shop/3cols">
                                     Shop
                                     <span onClick={(e) => { onToggle(e); e.preventDefault() }}></span>
                                 </ALink>

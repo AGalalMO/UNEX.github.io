@@ -34,7 +34,7 @@ function MainMenu () {
                     <ALink href="/" >Home</ALink>
                 </li>
                 <li className={path.indexOf("/shop") > -1 ? 'active' : ''}>
-                    <ALink href="/shop/list"  >Shop</ALink>
+                    <ALink href="/shop/3cols"  >Shop</ALink>
                 </li>
                 <li className={path.indexOf("product/") > -1 ? 'active' : ''}>
                     <ALink href="/product/default/dark-yellow-lace-cut-out-swing-dress" className="sf-with-ul">Product</ALink>

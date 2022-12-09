@@ -27,10 +27,10 @@ function ProductFive ( props ) {
         }, [] );
 
         if ( product?.variants?.length == 0 ) {
-            min = product.sale_price
-                ? product.sale_price
-                : product.price;
-            max = product.price;
+            min = product?.sale_price
+                ? product?.sale_price
+                : product?.price;
+            max = product?.price;
         }
 
         setMinPrice( min );
@@ -60,37 +60,37 @@ function ProductFive ( props ) {
 
     function onQuickView ( e ) {
         e.preventDefault();
-        props.showQuickView( product.slug );
+        props.showQuickView( product?.slug );
     }
 
     return (
         <div className="product product-4 text-center">
             <figure className="product-media">
                 {
-                    product.new ?
+                    product?.new ?
                         <span className="product-label label-circle label-new">New</span>
                         : ""
                 }
 
                 {
-                    product.sale_price ?
+                    product?.sale_price ?
                         <span className="product-label label-circle label-sale">Sale</span>
                         : ""
                 }
 
                 {
-                    product.top ?
+                    product?.top ?
                         <span className="product-label label-circle label-top">Top</span>
                         : ""
                 }
 
                 {
-                    !product.stock || product.stock == 0 ?
+                    !product?.stock || product?.stock == 0 ?
                         <span className="product-label label-circle label-out">Out of Stock</span>
                         : ""
                 }
 
-                <ALink href={ `/product/default/${product.slug}` }>
+                <ALink href={ `/product/default/${product?.slug}` }>
                     <LazyLoadImage
                         alt="product"
                         src={ product?.images[ 0 ] }
@@ -99,7 +99,7 @@ function ProductFive ( props ) {
                         wrapperClassName="product-image"
                     />
                     {
-                        product.sm_pictures.length >= 2 ?
+                        product?.photos?.length >= 2 ?
                             <LazyLoadImage
                                 alt="product"
                                 src={ product?.images[ 1 ] }
@@ -122,11 +122,11 @@ function ProductFive ( props ) {
                 </div>
 
                 {
-                    product.stock && product.stock !== 0 ?
+                    product?.stock && product?.stock !== 0 ?
                         <div className="product-action">
                             {
                                 product?.variants?.length > 0 ?
-                                    <ALink href={ `/product/default/${product.slug}` } className="btn-product btn-cart btn-select">
+                                    <ALink href={ `/product/default/${product?.slug}` } className="btn-product btn-cart btn-select">
                                         <span>select options</span>
                                     </ALink>
                                     :
@@ -141,27 +141,27 @@ function ProductFive ( props ) {
             </figure>
 
             <div className="product-body">
-                <div className="product-cat">
+                {/* <div className="product-cat">
                     {
-                        product.category.map( ( item, index ) => (
+                        product?.category?.map( ( item, index ) => (
                             <React.Fragment key={ item.slug + '-' + index }>
                                 <ALink href={ { pathname: '/shop/sidebar/list', query: { category: item.slug } } }>
                                     { item.name }
                                 </ALink>
-                                { index < product.category.length - 1 ? ', ' : "" }
+                                { index < product?.category.length - 1 ? ', ' : "" }
                             </React.Fragment>
                         ) )
                     }
-                </div>
+                </div> */}
 
                 <h3 className="product-title">
-                    <ALink href={ `/product/default/${product.slug}` }>{ product.name }</ALink>
+                    <ALink href={ `/product/default/${product?.slug}` }>{ product?.name }</ALink>
                 </h3>
 
                 {
-                    !product.stock || product.stock == 0 ?
+                    !product?.stock || product?.stock == 0 ?
                         <div className="product-price">
-                            <span className="out-price">${ product.price.toFixed( 2 ) }</span>
+                            <span className="out-price">${ product?.price.toFixed( 2 ) }</span>
                         </div>
                         :
                         minPrice == maxPrice ?
@@ -196,8 +196,8 @@ function ProductFive ( props ) {
 
 const mapStateToProps = ( state ) => {
     return {
-        wishlist: state.wishlist.data,
-        comparelist: state.comparelist.data
+        wishlist: {},
+        comparelist:[]
     }
 }
 
