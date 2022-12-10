@@ -6,7 +6,7 @@ import Pagination from '~/src/components/features/pagination';
 import axiosInstance from '~/src/utils/axios/axiosInstance';
 import { APIS } from '~/src/utils/ServiceUrls';
 import { BreadCrumb } from '~/src/components/partials/shop/list/components/BreadCrumb';
-import SideBar from '~/src/components/partials/shop/list/components/SiderBar';
+import SideBar from '~/src/components/partials/shop/sidebar/SiderBar';
 import { ToolBox } from '~/src/components/partials/shop/list/components/ToolBox';
 
 function ShopGrid ({ products, categories }) {
@@ -34,7 +34,7 @@ function ShopGrid ({ products, categories }) {
     return (
         <main className="main shop">
             <PageHeader title={"UNEX"} subTitle="Shop" />
-            <BreadCrumb query={query} pageTitle={'Shop'} />
+            <BreadCrumb query={query} pageTitle={'All Products'} />
             <div className="page-content">
                 <div className="container">
                     <div className="row skeleton-body">

@@ -1,7 +1,6 @@
 import { useRouter } from 'next/router';
 import GalleryDefault from '~/src/components/partials/product/gallery/gallery-default';
 import DetailOne from '~/src/components/partials/product/details/ProductDetails';
-import InfoOne from '~/src/components/partials/product/info-tabs/info-one';
 import RelatedProductsOne from '~/src/components/partials/product/related/related-one';
 import axiosInstance from '~/src/utils/axios/axiosInstance';
 import { APIS } from '~/src/utils/ServiceUrls';
