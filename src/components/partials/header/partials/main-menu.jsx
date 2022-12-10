@@ -83,23 +83,3 @@ function MainMenu () {
 }
 
 export default MainMenu;
-
-{/* <li className={ path.indexOf( "element" ) > -1 ? 'active' : '' }>
-                    <ALink href="/elements" className="sf-with-ul">Elements</ALink>
-
-                    <ul>
-                        <li className={ path.indexOf( "elements/products" ) > -1 ? "active" : '' }><ALink href="/elements/products">Products</ALink></li>
-                        <li className={ path.indexOf( "elements/typography" ) > -1 ? "active" : '' }><ALink href="/elements/typography">Typography</ALink></li>
-                        <li className={ path.indexOf( "elements/titles" ) > -1 ? "active" : '' }><ALink href="/elements/titles">Titles</ALink></li>
-                        <li className={ path.indexOf( "elements/banners" ) > -1 ? "active" : '' }><ALink href="/elements/banners">Banners</ALink></li>
-                        <li className={ path.indexOf( "elements/categories" ) > -1 ? "active" : '' }><ALink href="/elements/categories">Product Category</ALink></li>
-                        <li className={ path.indexOf( "elements/video-banners" ) > -1 ? "active" : '' }><ALink href="/elements/video-banners">Video Banners</ALink></li>
-                        <li className={ path.indexOf( "elements/buttons" ) > -1 ? "active" : '' }><ALink href="/elements/buttons">Buttons</ALink></li>
-                        <li className={ path.indexOf( "elements/accordions" ) > -1 ? "active" : '' }><ALink href="/elements/accordions">Accordions</ALink></li>
-                        <li className={ path.indexOf( "elements/tabs" ) > -1 ? "active" : '' }><ALink href="/elements/tabs">Tabs</ALink></li>
-                        <li className={ path.indexOf( "elements/testimonials" ) > -1 ? "active" : '' }><ALink href="/elements/testimonials">Testimonials</ALink></li>
-                        <li className={ path.indexOf( "elements/blog-posts" ) > -1 ? "active" : '' }><ALink href="/elements/blog-posts">Blog Posts</ALink></li>
-                        <li className={ path.indexOf( "elements/cta" ) > -1 ? "active" : '' }><ALink href="/elements/cta">Call to Action</ALink></li>
-                        <li className={ path.indexOf( "elements/icon-boxes" ) > -1 ? "active" : '' }><ALink href="/elements/icon-boxes">Icon Boxes</ALink></li>
-                    </ul>
-                </li> */}

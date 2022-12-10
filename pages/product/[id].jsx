@@ -1,40 +1,27 @@
 import { useRouter } from 'next/router';
-
-
-import Breadcrumb from '~/src/components/partials/product/breadcrumb';
 import GalleryDefault from '~/src/components/partials/product/gallery/gallery-default';
-import DetailOne from '~/src/components/partials/product/details/Draft';
-import InfoTwo from '~/src/components/partials/product/info-tabs/info-two';
+import DetailOne from '~/src/components/partials/product/details/ProductDetails';
+import InfoOne from '~/src/components/partials/product/info-tabs/info-one';
 import RelatedProductsOne from '~/src/components/partials/product/related/related-one';
+import axiosInstance from '~/src/utils/axios/axiosInstance';
+import { APIS } from '~/src/utils/ServiceUrls';
+import { BreadCrumb } from '~/src/components/partials/shop/list/components/BreadCrumb';
 
-function ProductDefault () {
-    const slug = useRouter().query.slug;
-    if ( !slug ) return <div></div>;
-
-    const data = [];
+function SingleProduct ({ product }) {
     const loading = false;
-    const error = false
-    const product = {};
-    const related = {};
-    const prev = {}
-    const next = {};
-
-    if ( error ) {
-        return <div></div>
-    }
 
     return (
         <div className="main">
-            <Breadcrumb prev={ prev } next={ next } current="Extended" />
+            <BreadCrumb current="Default" pageTitle={product?.name} />
             <div className="page-content">
-                <div className="container skeleton-body horizontal">
+                <div className="container skeleton-body">
                     <div className="product-details-top">
                         <div className={ `row skel-pro-single ${loading ? '' : 'loaded'}` }>
                             <div className="col-md-6">
                                 <div className="skel-product-gallery"></div>
                                 {
                                     !loading ?
-                                        <GalleryDefault product={ product } adClass="" />
+                                        <GalleryDefault product={ product } />
                                         : ""
                                 }
                             </div>
@@ -56,21 +43,29 @@ function ProductDefault () {
                             </div>
                         </div>
                     </div>
+
+                   
+
+                    <RelatedProductsOne products={ [] } loading={ loading } />
                 </div >
-                {
-                    loading ?
-                        <div className="skel-pro-tabs"></div>
-                        :
-                        <InfoTwo product={ product } />
-
-                }
-
-                <div className="container">
-                    <RelatedProductsOne products={ related } loading={ loading } />
-                </div>
             </div >
         </div >
     )
 }
 
-export default ProductDefault
+export default SingleProduct
+
+export async function getServerSideProps (context) {
+    const { locale } = context;
+    const { id } = context.query;
+    console.log("idd",id)
+    let product = await axiosInstance.get(APIS.PRODUCTS.GET(id), {
+        headers: {
+            'common': {
+                'accept-language': locale ?? 'en'
+            }
+        }
+    })
+
+    return { props: { product: product.data?.[0] } };
+}

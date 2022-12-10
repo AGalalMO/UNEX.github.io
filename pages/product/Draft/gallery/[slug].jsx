@@ -2,10 +2,10 @@ import { useRouter } from 'next/router';
 
 
 import Breadcrumb from '~/src/components/partials/product/breadcrumb';
-import GalleryExtended from '~/src/components/partials/product/gallery/gallery-extended';
-import DetailThree from '~/src/components/partials/product/details/detail-three';
+import GalleryExtended from '~/src/components/partials/product/gallery/Draft/gallery-extended';
 import InfoOne from '~/src/components/partials/product/info-tabs/info-one';
 import RelatedProductsOne from '~/src/components/partials/product/related/related-one';
+import DetailOne from '~/src/components/partials/product/details/ProductDetails';
 
 function ProductDefault () {
     const slug = useRouter().query.slug;
@@ -55,7 +55,7 @@ function ProductDefault () {
 
                         {
                             !loading ?
-                                <DetailThree product={ product } />
+                                <DetailOne product={ product } />
                                 : ""
                         }
                     </div>

@@ -4,32 +4,22 @@ import StickyBox from 'react-sticky-box';
 
 import Breadcrumb from '~/src/components/partials/product/breadcrumb';
 import GalleryDefault from '~/src/components/partials/product/gallery/gallery-default';
-import DetailOne from '~/src/components/partials/product/details/Draft';
-import InfoThree from '~/src/components/partials/product/info-tabs/info-three';
+import DetailOne from '~/src/components/partials/product/details/ProductDetails';
+import InfoOne from '~/src/components/partials/product/info-tabs/info-one';
 import Sidebar from '~/src/components/partials/product/sidebar/product-sidebar';
-import { useEffect, useState } from 'react';
-import axiosInstance from '~/src/utils/axios/axiosInstance';
+import RelatedProductsOne from '~/src/components/partials/product/related/related-one';
 
-function ProductFullwidth () {
+function ProductSidebar () {
     const slug = useRouter().query.slug;
     if ( !slug ) return <div></div>;
 
-    const related = {};
-    const prev = {}
-    const next = {};
+    const product = [];
+    const related = [];
+    const prev = []
+    const next = [];
     const data = [];
     const loading = false;
     const error = false
-    const [product, setProduct] = useState({
-        
-    })
-    useEffect(() => {
-        getProduct()
-    }, [])
-    const getProduct = async () => {
-        const rsponse = await axiosInstance.get('https://dummyjson.com/products/1')
-        setProduct(rsponse.data)
-    }
 
     if ( error ) {
         return <div></div>
@@ -37,15 +27,14 @@ function ProductFullwidth () {
 
     return (
         <div className="main">
-            <Breadcrumb prev={ prev } next={ next } current="Sidebar" fullWidth={ true } />
-
-            <div className="page-content pb-3">
-                <div className={ `container-fluid skeleton-body horizontal` }>
+            <Breadcrumb prev={ prev } next={ next } current="Sidebar" />
+            <div className="page-content">
+                <div className="container skeleton-body horizontal">
                     <div className="row">
-                        <div className="col-xxl-10 col-lg-9">
-                            <div className="product-details-top mb-0">
-                                <div className={ `row skel-pro-single fullwidth ${loading ? '' : 'loaded'}` }>
-                                    <div className="col-md-6 col-lg-7">
+                        <div className="col-lg-9">
+                            <div className="product-details-top">
+                                <div className={ `row skel-pro-single ${loading ? '' : 'loaded'}` }>
+                                    <div className="col-md-6">
                                         <div className="skel-product-gallery"></div>
                                         {
                                             !loading ?
@@ -54,7 +43,7 @@ function ProductFullwidth () {
                                         }
                                     </div>
 
-                                    <div className="col-md-6 col-lg-5">
+                                    <div className="col-md-6">
                                         <div className="entry-summary row">
                                             <div className="col-md-12">
                                                 <div className="entry-summary1 mt-2 mt-md-0"></div>
@@ -68,12 +57,20 @@ function ProductFullwidth () {
                                                 <DetailOne product={ product } />
                                                 : ""
                                         }
-                                        <InfoThree product={ product } />
                                     </div>
                                 </div>
                             </div>
+                            {
+                                loading ?
+                                    <div className="skel-pro-tabs"></div>
+                                    :
+                                    <InfoOne product={ product } />
+                            }
+                            <div className="nav-none">
+                                <RelatedProductsOne products={ related } loading={ loading } />
+                            </div>
                         </div>
-                        <div className="col-xxl-2 col-lg-3 skeleton-body">
+                        <div className="col-lg-3 skeleton-body">
                             <StickyBox className={ `sticky-content skel-pro-single ${loading ? '' : 'loaded'}` } offsetTop={ 70 }>
                                 <div className="skel-widget"></div>
                                 <div className="skel-widget"></div>
@@ -87,4 +84,4 @@ function ProductFullwidth () {
     )
 }
 
-export default ProductFullwidth
+export default ProductSidebar

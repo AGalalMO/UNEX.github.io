@@ -3,7 +3,7 @@ import { useState, useEffect, useLayoutEffect } from 'react';
 
 import ALink from '~/src/components/features/alink';
 import PageHeader from '~/src/components/features/page-header';
-import ShopListThree from '~/src/components/partials/shop/list/shop-list-three';
+import ShopListOne from '~/src/components/partials/shop/list/shop-list-one';
 import ShopSidebarOne from '~/src/components/partials/shop/sidebar/shop-sidebar-one';
 
 import { scrollToPageContent } from '~/src/utils/shared';
@@ -204,7 +204,7 @@ function ShopNoSidebar() {
                         </div>
                     </div >
 
-                    <ShopListThree products={ products } loading={ loading }></ShopListThree>
+                    <ShopListOne products={products} loading={loading}></ShopListOne>
                     <div className={ `load-more-container text-center ${ ( ( totalCount > perPage ) || moreLoading ) ? '' : 'd-none' }` }>
                         <a
                             href="#"

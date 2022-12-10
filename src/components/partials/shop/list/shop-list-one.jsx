@@ -1,6 +1,5 @@
 import { useRouter } from 'next/router';
 import React, { useState, useEffect } from 'react';
-
 import ProductNine from '~/src/components/features/products/product-nine';
 import ProductEleven from '~/src/components/features/products/product-eleven';
 
@@ -22,8 +21,7 @@ function ShopListOne ( props ) {
     useEffect( () => {
         if ( type === 'list' || type === '2cols' ) setGridClass( 'col-6' );
         if ( type === '3cols' ) setGridClass( 'col-6 col-md-4 col-lg-4' );
-        if ( type === '4cols' )
-            setGridClass( 'col-6 col-md-4 col-lg-4 col-xl-3' );
+        
     }, [ type ] )
 
     return (
@@ -44,7 +42,7 @@ function ShopListOne ( props ) {
                                     :
                                     products.map( ( product, index ) => (
                                         <ProductNine
-                                            product={ product }
+                                            product={product }
                                             key={ index }
                                         />
                                     ) )

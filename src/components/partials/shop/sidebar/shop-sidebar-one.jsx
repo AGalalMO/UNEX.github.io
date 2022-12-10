@@ -177,7 +177,7 @@ const CategoryList = ({ categories, query, router }) => {
                                     categories.map((item, index) =>
                                     (
                                         <>
-                                            {item.subcategories.length > 0 &&
+                                            {item?.subcategories && item?.subcategories?.length > 0 &&
                                                 <div className="filter-item" key={`cat_${index}`}>
                                                     <ALink className={`${query.category == item.name ? 'active' : ''}`}
                                                         href='#'
@@ -187,7 +187,7 @@ const CategoryList = ({ categories, query, router }) => {
                                                         }}
                                                         scroll={false}>{item.name}</ALink>
                                                     <div className="mb-2" style={{ marginInlineStart: '20px' }}>
-                                                        {item.subcategories.map((itemSubCategory, subIndex) => (<>
+                                                        {item?.subcategories?.map((itemSubCategory, subIndex) => (<>
                                                             <div className="filter-items filter-items-count" key={`${itemSubCategory.id}${subIndex}`}>
                                                                 <ALink className={`${query.category == itemSubCategory.name ? 'active' : ''}`}
                                                                     href={{ pathname: router.pathname, query: { type: query.type, subCategory: itemSubCategory.name } }}

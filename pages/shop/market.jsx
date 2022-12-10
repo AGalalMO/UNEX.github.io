@@ -1,17 +1,16 @@
 import StickyBox from 'react-sticky-box';
 import { useRouter } from 'next/router';
-import React, { useState, useEffect } from 'react';
-import { useLazyQuery } from '@apollo/react-hooks';
+import { useState, useEffect } from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 import ALink from '~/src/components/features/alink';
 import PageHeader from '~/src/components/features/page-header';
 import OwlCarousel from '~/src/components/features/owl-carousel';
-import ShopListTwo from '~/src/components/partials/shop/list/shop-list-two';
 import Pagination from '~/src/components/features/pagination';
-import ShopSidebarThree from '~/src/components/partials/shop/sidebar/shop-sidebar-three';
 
 import { homeData, mainSlider11, mainSlider10 } from '~/src/utils/shared/data';
+import ShopSidebarOne from '~/src/components/partials/shop/sidebar/shop-sidebar-one';
+import ShopListOne from '~/src/components/partials/shop/list/shop-list-one';
 
 function ShopMarket () {
     const router = useRouter();
@@ -276,7 +275,7 @@ function ShopMarket () {
                                 </div>
                             </div >
 
-                            <ShopListTwo products={products} perPage={perPage} loading={loading} />
+                            <ShopListOne products={products} perPage={perPage} loading={loading} />
 
                             {
                                 totalCount > perPage ?
@@ -287,7 +286,7 @@ function ShopMarket () {
 
                         <aside className="col-lg-3 col-xl-5col order-lg-first">
                             <StickyBox className="sticky-market-sidebar" offsetTop={70}>
-                                <ShopSidebarThree toggle={toggle} />
+                                <ShopSidebarOne toggle={toggle} />
                             </StickyBox>
                             {
                                 toggle ?

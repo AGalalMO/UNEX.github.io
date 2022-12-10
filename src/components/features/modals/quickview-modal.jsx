@@ -5,7 +5,7 @@ import { Magnifier } from 'react-image-magnifiers';
 import { useRouter } from 'next/router';
 
 import OwlCarousel from '~/src/components/features/owl-carousel';
-import DetailOne from '~/src/components/partials/product/details/Draft';
+import DetailOne from '~/src/components/partials/product/details/ProductDetails';
 
 
 import { actions as demoAction } from '~/store/demo';

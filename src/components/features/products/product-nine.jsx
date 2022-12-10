@@ -176,7 +176,7 @@ function ProductSix ( props ) {
                         <div className="ratings-container">
                             <div className="ratings">
                                 <div className="ratings-val" style={ { width: product?.rating * 20 + '%' } }></div>
-                                <span className="tooltip-text">{ product?.rating.toFixed( 2 ) }</span>
+                                <span className="tooltip-text">{ product?.rating?.toFixed( 2 ) }</span>
                             </div>
                             <span className="ratings-text">( { product?.review } Reviews )</span>
                         </div>

@@ -3,8 +3,8 @@ import { useRouter } from 'next/router';
 
 import Breadcrumb from '~/src/components/partials/product/breadcrumb';
 import GalleryDefault from '~/src/components/partials/product/gallery/gallery-default';
-import DetailOne from '~/src/components/partials/product/details/Draft';
-import InfoOne from '~/src/components/partials/product/info-tabs/info-one';
+import DetailOne from '~/src/components/partials/product/details/ProductDetails';
+import InfoTwo from '~/src/components/partials/product/info-tabs/info-two';
 import RelatedProductsOne from '~/src/components/partials/product/related/related-one';
 
 function ProductDefault () {
@@ -25,16 +25,16 @@ function ProductDefault () {
 
     return (
         <div className="main">
-            <Breadcrumb prev={ prev } next={ next } current="Default" />
+            <Breadcrumb prev={ prev } next={ next } current="Extended" />
             <div className="page-content">
-                <div className="container skeleton-body">
+                <div className="container skeleton-body horizontal">
                     <div className="product-details-top">
                         <div className={ `row skel-pro-single ${loading ? '' : 'loaded'}` }>
                             <div className="col-md-6">
                                 <div className="skel-product-gallery"></div>
                                 {
                                     !loading ?
-                                        <GalleryDefault product={ product } />
+                                        <GalleryDefault product={ product } adClass="" />
                                         : ""
                                 }
                             </div>
@@ -56,16 +56,18 @@ function ProductDefault () {
                             </div>
                         </div>
                     </div>
-
-                    {
-                        loading ?
-                            <div className="skel-pro-tabs"></div>
-                            :
-                            <InfoOne product={ product } />
-                    }
-
-                    <RelatedProductsOne products={ related } loading={ loading } />
                 </div >
+                {
+                    loading ?
+                        <div className="skel-pro-tabs"></div>
+                        :
+                        <InfoTwo product={ product } />
+
+                }
+
+                <div className="container">
+                    <RelatedProductsOne products={ related } loading={ loading } />
+                </div>
             </div >
         </div >
     )

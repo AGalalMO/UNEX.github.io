@@ -4,9 +4,9 @@ import { useQuery } from '@apollo/react-hooks';
 
 import Breadcrumb from '~/src/components/partials/product/breadcrumb';
 import GalleryDefault from '~/src/components/partials/product/gallery/gallery-default';
-import DetailTwo from '~/src/components/partials/product/details/detail-two';
 import InfoOne from '~/src/components/partials/product/info-tabs/info-one';
 import RelatedProductsOne from '~/src/components/partials/product/related/related-one';
+import DetailOne from '~/src/components/partials/product/details/ProductDetails';
 
 function ProductCentered () {
     const slug = useRouter().query.slug;
@@ -51,7 +51,7 @@ function ProductCentered () {
                                 </div>
                                 {
                                     !loading ?
-                                        <DetailTwo product={ product } />
+                                        <DetailOne product={ product } />
                                         : ""
                                 }
                             </div>

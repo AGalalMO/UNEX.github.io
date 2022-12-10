@@ -5,7 +5,8 @@ export const APIS = {
     REGISTER: `${baseUrl}account/register`,
   },
   PRODUCTS: {
-    
+    LIST: `${baseUrl}product/getall`,
+    GET: (id) => `${baseUrl}product/getbyid?id=${id}`,
   },
   CATEGORIES: {
     LIST: `${baseUrl}category/getall`,
