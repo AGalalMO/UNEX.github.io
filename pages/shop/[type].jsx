@@ -6,8 +6,8 @@ import Pagination from '~/src/components/features/pagination';
 import axiosInstance from '~/src/utils/axios/axiosInstance';
 import { APIS } from '~/src/utils/ServiceUrls';
 import { BreadCrumb } from '~/src/components/partials/shop/list/components/BreadCrumb';
-import SideBar from '~/src/components/partials/shop/list/components/sidebar/SideBar';
 import { ToolBox } from '~/src/components/partials/shop/list/components/ToolBox';
+import SideBar from '~/src/components/partials/shop/sidebar/SideBar';
 
 function ShopGrid ({ products, categories }) {
     const router = useRouter();
