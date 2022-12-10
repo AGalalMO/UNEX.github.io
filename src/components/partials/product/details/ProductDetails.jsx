@@ -45,7 +45,6 @@ function DetailOne (props) {
     function selectSize (value) {
       
         setSize(value.size)
-        console.log("size")
         const filter = selectedInfo?.countBySize.filter((item)=>item.size==value)
        setSelectedSizeCount(filter[0])
         setQty(0)
@@ -108,7 +107,6 @@ function DetailOne (props) {
                                         style={{ backgroundColor: item.color, width: 36, height: 36 }}
                                         key={index}
                                         onClick={() => {
-                                            console.log("item", item)
                                             setSelectedInfo(item)
                                             setSelectedSizeCount(item.countBySize?.[0])
                                             setSize(item.countBySize?.[0]?.size)
